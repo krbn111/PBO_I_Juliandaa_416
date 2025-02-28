@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class ModulPractice {
+    public static void main(String[] args) {
+        int tahunLahir;
+        String Nama;
+        String kelamin;
+        Scanner objInput = new Scanner(System.in);
+        System.out.print("Masukkan Nama: ");
+        Nama = objInput.nextLine();
+        System.out.print("Masukkan Jenis Kelamin (P/L): ");
+        kelamin = objInput.nextLine().toUpperCase();
+        System.out.print("Masukkan Tahun Lahir: ");
+        while (!objInput.hasNextInt()) {
+            System.out.print("Input tidak valid. Masukkan Tahun Lahir (angka): ");
+            objInput.next();
+        }
+        tahunLahir = objInput.nextInt();
+
+        String jenisKelamin;
+        switch (kelamin) {
+            case "P":
+                jenisKelamin = "Perempuan";
+                break;
+            case "L":
+                jenisKelamin = "Laki-Laki";
+                break;
+            default:
+                jenisKelamin = "Tidak Diketahui";
+                break;
+        }
+
+        int umur = 2025 - tahunLahir;
+
+        System.out.println("Nama: " + Nama);
+        System.out.println("Kelamin: " + jenisKelamin);
+        System.out.println("Umur: " + umur + " Tahun ");
+    }
+}
