@@ -1,0 +1,44 @@
+import java.util.Scanner;
+public class Modul1Tugas1 {
+    public static void main(String[] args) {
+        int Pilihan;
+        long NIM ;
+        String Nama;
+        String Username;
+        String Password;
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Pilih Login: ");
+        System.out.println("1. Admin ");
+        System.out.println("2. Mahasiswa ");
+        System.out.print("Masukkan pilihan: ");
+        Pilihan = input.nextInt();
+        input.nextLine();
+
+        if (Pilihan == 1) {
+            System.out.print("Masukkan Username: ");
+            Username = input.nextLine();
+            System.out.print("Masukkan Password: ");
+            Password = input.nextLine();
+
+            if (Username.equals("Admin416") && Password.equals("Password416")) {
+                System.out.println("Login Admin Berhasil");
+            } else {
+                System.out.println("Login gagal! Username atau password salah.");
+            }
+        } else if (Pilihan == 2) {
+            System.out.print("Masukkan Nama: ");
+            Nama = input.nextLine();
+            System.out.print("Masukkan NIM: ");
+            NIM = input.nextLong();
+
+            if (Nama.equals("Julianda Wardojo") && NIM == (202410370110416L)) {
+                System.out.println("Login Mahasiswa Berhasil");
+            } else {
+                System.out.println("Login gagal! Nama atau NIM salah.");
+            }
+        } else {
+            System.out.println("Pilihan tidak valid.");
+        }
+    }
+}
